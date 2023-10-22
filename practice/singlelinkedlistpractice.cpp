@@ -10,7 +10,9 @@ struct Node
 class LinkedList 
 { 
 public:
+
     Node* head;
+
     LinkedList() 
     {
         head = nullptr; // Initialize an empty list
@@ -23,6 +25,33 @@ public:
     newNode->next = head;
     head = newNode;
     }
+
+    void insertAtEnd(int value) {
+    Node* newNode = new Node;
+    newNode->data = value;
+    newNode->next = nullptr;
+
+    if (head == nullptr) {
+        head = newNode;
+        return;
+    }
+
+    Node* current = head;
+    while (current->next != nullptr) {
+        current = current->next;
+    }
+
+    current->next = newNode;
+}
+    void display() {
+    Node* current = head;
+    while (current != nullptr) {
+        cout << current->data << " -> ";
+        current = current->next;
+    }
+    cout << "nullptr" << endl;
+}
+
 
 };
 
