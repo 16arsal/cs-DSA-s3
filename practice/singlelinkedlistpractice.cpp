@@ -16,7 +16,8 @@ public:
     }
 
     // Insertion at the beginning
-    void insertAtBeginning(int value) {
+    void insertAtBeginning(int value) 
+    {
         Node* newNode = new Node;
         newNode->data = value;
         newNode->next = head;
@@ -24,7 +25,8 @@ public:
     }
 
     // Insertion at the end
-    void insertAtEnd(int value) {
+    void insertAtEnd(int value)
+     {
         Node* newNode = new Node;
         newNode->data = value;
         newNode->next = nullptr;
@@ -88,10 +90,36 @@ public:
             current = current->next;
         }
     }
+
+       
+    // Insertion in the middle
+    void insertInMiddle(int value) {
+        Node* newNode = new Node;
+        newNode->data = value;
+        newNode->next = nullptr;
+
+        if (head == nullptr) {
+            // If the list is empty, insert the new node as the first element.
+            head = newNode;
+            return;
+        }
+
+        Node* current = head;
+        Node* previous = nullptr;
+
+        while (current != nullptr && current->next != nullptr) {
+            previous = (previous == nullptr) ? head : previous->next;
+            current = current->next->next;
+        }
+
+        // Adjust pointers to insert the new node in the middle
+        previous->next = newNode;
+        newNode->next = current;
+    }
 };
 
 int main() {
-    LinkedList myList;
+LinkedList myList;
 
     myList.insertAtBeginning(5);
     myList.insertAtBeginning(10);
@@ -104,6 +132,9 @@ int main() {
     } else {
         cout << "10 not found in the list." << endl;
     }
+
+    myList.insertInMiddle(25);  // Insert in the middle
+    myList.display();
 
     myList.deleteNode(10);
     myList.display();
