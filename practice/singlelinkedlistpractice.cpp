@@ -1,17 +1,18 @@
 #include <iostream>
 using namespace std;
 
-struct Node {
+struct Node 
+{
     int data;
     Node* next;
 };
 
 class LinkedList {
-private:
-    Node* head;
 
 public:
-    LinkedList() {
+  Node* head;
+    LinkedList() 
+    {
         head = nullptr; // Initialize an empty list
     }
 
