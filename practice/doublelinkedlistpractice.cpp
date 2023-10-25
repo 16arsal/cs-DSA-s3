@@ -39,20 +39,20 @@ public:
     void displayForward() {
         Node* current = head;
         while (current != nullptr) {
-            cout << current->data << " -> ";
+            std::cout << current->data << " -> ";
             current = current->next;
         }
-        cout << "nullptr" << endl;
+        std::cout << "nullptr" << std::endl;
     }
 
     // Display the linked list backward
     void displayBackward() {
         Node* current = tail;
         while (current != nullptr) {
-            cout << current->data << " -> ";
+            std::cout << current->data << " -> ";
             current = current->prev;
         }
-        cout << "nullptr" << endl;
+        std::cout << "nullptr" << std::endl;
     }
 
     // Search for a value in the linked list
@@ -108,9 +108,9 @@ int main() {
     myList.displayBackward();
 
     if (myList.search(10)) {
-        cout << "Found 10 in the list." << endl;
+        std::cout << "Found 10 in the list." << std::endl;
     } else {
-        cout << "10 not found in the list." << endl;
+        std::cout << "10 not found in the list." << std::endl;
     }
 
     myList.deleteNode(10);

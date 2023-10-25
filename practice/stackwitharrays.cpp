@@ -2,13 +2,15 @@
 using namespace std;
 
 class Stack {
-private:
+
+public:
+
     static const int MAX_SIZE = 100; // Maximum size of the stack
     int arr[MAX_SIZE]; // Array to store elements
     int top; // Index of the top element
 
-public:
-    Stack() {
+    Stack() 
+    {
         top = -1; // Initialize the top index to -1 (empty stack)
     }
 

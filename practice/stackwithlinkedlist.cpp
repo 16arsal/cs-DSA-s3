@@ -1,27 +1,31 @@
 #include <iostream>
 
-struct Node {
+struct Node 
+{
     int data;
     Node* next;
 };
 
 class Stack {
-private:
+public:
     Node* top; // Pointer to the top element
 
-public:
-    Stack() {
+    Stack() 
+    {
         top = nullptr; // Initialize an empty stack
     }
 
-    void push(int value) {
+    void push(int value)
+
+    {
         Node* newNode = new Node;
         newNode->data = value;
         newNode->next = top;
         top = newNode;
     }
 
-    int pop() {
+    int pop() 
+    {
         if (isEmpty()) {
             std::cout << "Stack is empty. Cannot pop." << std::endl;
             return -1; // Return a sentinel value for an empty stack

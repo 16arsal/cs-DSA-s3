@@ -32,12 +32,14 @@ public:
         newNode->data = value;
         newNode->next = nullptr;
 
-        if (head == nullptr) {
+        if (head == nullptr) 
+        {
             head = newNode;
             return;
         }
 
         Node* current = head;
+        
         while (current->next != nullptr) {
             current = current->next;
         }

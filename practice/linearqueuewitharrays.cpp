@@ -1,7 +1,6 @@
 #include <iostream>
 
 class Queue {
-
 public:
     static const int MAX_SIZE = 100; // Maximum size of the queue
     int arr[MAX_SIZE]; // Array to store elements
@@ -18,11 +17,9 @@ public:
             return false;
         }
         if (isEmpty()) {
-            front = rear = 0;
-        } else {
-            rear = (rear + 1) % MAX_SIZE; // Circular queue
+            front = 0; // Set front to 0 when enqueuing the first element
         }
-        arr[rear] = value;
+        arr[++rear] = value;
         return true;
     }
 
@@ -35,8 +32,9 @@ public:
         int value = arr[front];
         if (front == rear) {
             front = rear = -1;
-        } else {
-            front = (front + 1) % MAX_SIZE; // Circular queue
+        } else 
+        {
+            front++;
         }
         return value;
     }
@@ -57,6 +55,25 @@ public:
 
     // Check if the queue is full
     bool isFull() {
-        return (rear + 1) % MAX_SIZE == front;
+        return rear == MAX_SIZE - 1;
     }
 };
+
+int main() {
+    Queue myQueue;
+
+    myQueue.enqueue(10);
+    myQueue.enqueue(20);
+    myQueue.enqueue(30);
+
+    std::cout << "Front element: " << myQueue.peek() << std::endl;
+
+    std::cout << "Dequeued: " << myQueue.dequeue() << std::endl;
+    std::cout << "Dequeued: " << myQueue.dequeue() << std::endl;
+
+    myQueue.enqueue(40);
+
+    std::cout << "Front element: " << myQueue.peek() << std::endl;
+
+    return 0;
+}
