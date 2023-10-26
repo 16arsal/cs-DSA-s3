@@ -1,5 +1,5 @@
 #include <iostream>
-
+using namespace std;
 struct Node 
 {
     int data;
@@ -8,11 +8,12 @@ struct Node
 
 class CircularLinkedList
 {
-private:
+    public:
+
     Node* head;
 
-public:
-    CircularLinkedList() {
+    CircularLinkedList() 
+    {
         head = nullptr;
     }
 
@@ -38,16 +39,16 @@ public:
     // Display the circular linked list
     void display() {
         if (head == nullptr) {
-            std::cout << "The list is empty." << std::endl;
+            cout << "The list is empty." << endl;
             return;
         }
 
         Node* current = head;
         do {
-            std::cout << current->data << " -> ";
+            cout << current->data << " -> ";
             current = current->next;
         } while (current != head);
-        std::cout << " (loop back to the beginning)" << std::endl;
+        cout << " (loop back to the beginning)" << endl;
     }
 };
 

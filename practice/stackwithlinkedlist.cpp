@@ -4,6 +4,7 @@ struct Node
 {
     int data;
     Node* next;
+    
 };
 
 class Stack {

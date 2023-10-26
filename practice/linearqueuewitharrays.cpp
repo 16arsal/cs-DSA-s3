@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 
 class Queue {
 public:
@@ -13,7 +14,7 @@ public:
     // Enqueue (push) an element
     bool enqueue(int value) {
         if (isFull()) {
-            std::cout << "Queue is full. Cannot enqueue " << value << std::endl;
+            cout << "Queue is full. Cannot enqueue " << value << endl;
             return false;
         }
         if (isEmpty()) {
@@ -26,7 +27,7 @@ public:
     // Dequeue (pop) an element
     int dequeue() {
         if (isEmpty()) {
-            std::cout << "Queue is empty. Cannot dequeue." << std::endl;
+            cout << "Queue is empty. Cannot dequeue." << endl;
             return -1; // Return a sentinel value for an empty queue
         }
         int value = arr[front];
@@ -42,7 +43,7 @@ public:
     // Peek at the front element
     int peek() {
         if (isEmpty()) {
-            std::cout << "Queue is empty. Cannot peek." << std::endl;
+            cout << "Queue is empty. Cannot peek." << endl;
             return -1; // Return a sentinel value for an empty queue
         }
         return arr[front];
@@ -66,14 +67,14 @@ int main() {
     myQueue.enqueue(20);
     myQueue.enqueue(30);
 
-    std::cout << "Front element: " << myQueue.peek() << std::endl;
+    cout << "Front element: " << myQueue.peek() << endl;
 
-    std::cout << "Dequeued: " << myQueue.dequeue() << std::endl;
-    std::cout << "Dequeued: " << myQueue.dequeue() << std::endl;
+    cout << "Dequeued: " << myQueue.dequeue() << endl;
+    cout << "Dequeued: " << myQueue.dequeue() << endl;
 
     myQueue.enqueue(40);
 
-    std::cout << "Front element: " << myQueue.peek() << std::endl;
+    cout << "Front element: " << myQueue.peek() << endl;
 
     return 0;
 }

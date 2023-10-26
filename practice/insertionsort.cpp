@@ -1,7 +1,9 @@
 #include <iostream>
+using namespace std;
 
 void insertionSort(int arr[], int size) {
-    for (int i = 1; i < size; i++) {
+    for (int i = 1; i < size; i++) 
+    {
         int key = arr[i];
         int j = i - 1;
 
@@ -20,19 +22,19 @@ int main() {
     int arr[] = {64, 34, 25, 12, 22, 11, 90};
     int size = sizeof(arr) / sizeof(arr[0]);
 
-    std::cout << "Original Array: ";
+    cout << "Original Array: ";
     for (int i = 0; i < size; i++) {
-        std::cout << arr[i] << " ";
+        cout << arr[i] << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 
     insertionSort(arr, size);
 
-    std::cout << "Sorted Array: ";
+    cout << "Sorted Array: ";
     for (int i = 0; i < size; i++) {
-        std::cout << arr[i] << " ";
+        cout << arr[i] << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 
     return 0;
 }

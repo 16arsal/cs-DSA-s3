@@ -1,5 +1,5 @@
 #include <iostream>
-
+using namespace std;
 // Define the structure for a node in the doubly linked list
 struct Node {
     int data;
@@ -8,12 +8,11 @@ struct Node {
 };
 
 class DoublyLinkedList {
-private:
+public:
     Node* head;
     Node* tail;
-
-public:
-    DoublyLinkedList() {
+    DoublyLinkedList() 
+    {
         head = nullptr;
         tail = nullptr;
     }
@@ -24,7 +23,8 @@ public:
         newNode->data = value;
         newNode->next = nullptr;
 
-        if (head == nullptr) {
+        if (head == nullptr) 
+        {
             newNode->prev = nullptr;
             head = newNode;
             tail = newNode;
@@ -36,23 +36,24 @@ public:
     }
 
     // Display the linked list forward
-    void displayForward() {
+    void displayForward() 
+    {
         Node* current = head;
         while (current != nullptr) {
-            std::cout << current->data << " -> ";
+            cout << current->data << " -> ";
             current = current->next;
         }
-        std::cout << "nullptr" << std::endl;
+        cout << "nullptr" << endl;
     }
 
     // Display the linked list backward
     void displayBackward() {
         Node* current = tail;
         while (current != nullptr) {
-            std::cout << current->data << " -> ";
+            cout << current->data << " -> ";
             current = current->prev;
         }
-        std::cout << "nullptr" << std::endl;
+        cout << "nullptr" << endl;
     }
 
     // Search for a value in the linked list
@@ -108,9 +109,9 @@ int main() {
     myList.displayBackward();
 
     if (myList.search(10)) {
-        std::cout << "Found 10 in the list." << std::endl;
+        cout << "Found 10 in the list." << endl;
     } else {
-        std::cout << "10 not found in the list." << std::endl;
+        cout << "10 not found in the list." << endl;
     }
 
     myList.deleteNode(10);
