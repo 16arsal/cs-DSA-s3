@@ -15,12 +15,14 @@ public:
     }
 
     // Check if the stack is empty
-    bool isEmpty() {
+    bool isEmpty() 
+    {
         return top == -1;
     }
 
     // Check if the stack is full
-    bool isFull() {
+    bool isFull() 
+    {
         return top == MAX_SIZE - 1;
     }
 

@@ -8,7 +8,9 @@ struct Node
 };
 
 class Stack {
+
 public:
+
     Node* top; // Pointer to the top element
 
     Stack() 
