@@ -9,8 +9,10 @@ struct Node {
 
 class DoublyLinkedList {
 public:
+
     Node* head;
     Node* tail;
+
     DoublyLinkedList() 
     {
         head = nullptr;

@@ -3,6 +3,7 @@ using namespace std;
 
 class Queue {
 public:
+
     static const int MAX_SIZE = 100; // Maximum size of the queue
     int arr[MAX_SIZE]; // Array to store elements
     int front, rear; // Pointers to the front and rear of the queue

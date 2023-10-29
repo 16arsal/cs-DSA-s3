@@ -1,1 +1,1 @@
- current = current->next;
+ while (current != nullptr)

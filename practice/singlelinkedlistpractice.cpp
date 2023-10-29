@@ -53,7 +53,8 @@ public:
     // Display the linked list
     void display() {
         Node* current = head;
-        while (current != nullptr) {
+        while (current != nullptr)
+        {
             cout << current->data << " -> ";
             current = current->next;
         }
