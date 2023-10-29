@@ -12,7 +12,7 @@ public:
     }
 
     // Enqueue (push) an element
-    bool enqueue(int value) {
+        bool enqueue(int value) {
         if (isFull()) {
             std::cout << "Queue is full. Cannot enqueue " << value << std::endl;
             return false;
@@ -60,3 +60,32 @@ public:
         return (rear + 1) % MAX_SIZE == front;
     }
 };
+int main() {
+    Queue myQueue; // Create an instance of the Queue class
+
+    // Enqueue some elements
+    myQueue.enqueue(10);
+    myQueue.enqueue(20);
+    myQueue.enqueue(30);
+
+    // Dequeue elements and display them
+    std::cout << "Dequeued elements: ";
+    std::cout << myQueue.dequeue() << " ";
+    std::cout << myQueue.dequeue() << " ";
+    std::cout << myQueue.dequeue() << " ";
+    std::cout << std::endl;
+
+    // Peek at the front element
+    int frontElement = myQueue.peek();
+    std::cout << "Front element: " << frontElement << std::endl;
+
+    // Check if the queue is empty
+    bool empty = myQueue.isEmpty();
+    if (empty) {
+        std::cout << "Queue is empty." << std::endl;
+    } else {
+        std::cout << "Queue is not empty." << std::endl;
+    }
+
+    return 0;
+}
