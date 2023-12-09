@@ -5,7 +5,6 @@ struct Node
 {
     int data;
     Node* next;
-
 };
 
 class LinkedList {
@@ -114,10 +113,18 @@ public:
         Node* current = head;
         Node* previous = nullptr;
 
-        while (current != nullptr && current->next != nullptr) {
-            previous = (previous == nullptr) ? head : previous->next;
-            current = current->next->next;
-        }
+            while (current != nullptr && current->next != nullptr) {
+                // Move previous one step forward
+                if (previous == nullptr) {
+                    previous = head;
+                } else {
+                    previous = previous->next;
+                }
+
+                // Move current two steps forward
+                current = current->next->next;
+            }
+
 
         // Adjust pointers to insert the new node in the middle
         previous->next = newNode;

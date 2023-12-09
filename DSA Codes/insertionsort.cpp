@@ -16,7 +16,7 @@ void insertionSort(int arr[], int size) {
         }
 
         arr[j + 1] = key;
-    }
+    };
 }
 
 int main() {
@@ -24,7 +24,8 @@ int main() {
     int size = sizeof(arr) / sizeof(arr[0]);
 
     cout << "Original Array: ";
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) 
+    {
         cout << arr[i] << " ";
     }
     cout << endl;

@@ -31,7 +31,7 @@ public:
     {
         if (isEmpty()) {
             std::cout << "Stack is empty. Cannot pop." << std::endl;
-            return -1; // Return a sentinel value for an empty stack
+             return -1; // Return a sentinel value for an empty stack
         }
         int value = top->data;
         Node* temp = top;
