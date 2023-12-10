@@ -15,7 +15,7 @@ void selectionSort(int arr[], int size) {
 
         // Swap the found minimum element with the first element in the unsorted portion
         if (minIndex != i) {
-            std::swap(arr[i], arr[minIndex]);
+            swap(arr[i], arr[minIndex]);
         }
     }
 }
@@ -24,19 +24,19 @@ int main() {
     int arr[] = {64, 34, 25, 12, 22, 11, 90};
     int size = sizeof(arr) / sizeof(arr[0]);
 
-    std::cout << "Original Array: ";
+    cout << "Original Array: ";
     for (int i = 0; i < size; i++) {
-        std::cout << arr[i] << " ";
+        cout << arr[i] << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 
     selectionSort(arr, size);
 
-    std::cout << "Sorted Array: ";
+    cout << "Sorted Array: ";
     for (int i = 0; i < size; i++) {
-        std::cout << arr[i] << " ";
+        cout << arr[i] << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 
     return 0;
 }

@@ -32,7 +32,7 @@ public:
     // Dequeue (pop) an element
     int dequeue() {
         if (isEmpty()) {
-            std::cout << "Queue is empty. Cannot dequeue." << std::endl;
+            cout << "Queue is empty. Cannot dequeue." << endl;
             return -1; // Return a sentinel value for an empty queue
         }
         int value = front->data;
@@ -50,7 +50,7 @@ public:
     // Peek at the front element
     int peek() {
         if (isEmpty()) {
-            std::cout << "Queue is empty. Cannot peek." << std::endl;
+            cout << "Queue is empty. Cannot peek." << endl;
             return -1; // Return a sentinel value for an empty queue
         }
         return front->data;

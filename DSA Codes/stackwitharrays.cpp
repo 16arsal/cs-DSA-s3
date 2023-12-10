@@ -29,7 +29,7 @@ public:
     // Push an element onto the stack
     bool push(int value) {
         if (isFull()) {
-            std::cout << "Stack is full. Cannot push " << value << std::endl;
+            cout << "Stack is full. Cannot push " << value << endl;
             return false;
         }
         arr[++top] = value;
@@ -39,7 +39,7 @@ public:
     // Pop and return the top element from the stack
     int pop() {
         if (isEmpty()) {
-            std::cout << "Stack is empty. Cannot pop." << std::endl;
+            cout << "Stack is empty. Cannot pop." << endl;
             return -1; // Return a sentinel value for an empty stack
         }
         return arr[top--];
@@ -48,7 +48,7 @@ public:
     // Peek at the top element without removing it
     int peek() {
         if (isEmpty()) {
-            std::cout << "Stack is empty. Cannot peek." << std::endl;
+            cout << "Stack is empty. Cannot peek." << endl;
             return -1; // Return a sentinel value for an empty stack
         }
         return arr[top];
@@ -62,10 +62,10 @@ int main() {
     myStack.push(10);
     myStack.push(15);
 
-    std::cout << "Top element: " << myStack.peek() << std::endl;
+    cout << "Top element: " << myStack.peek() << endl;
 
     while (!myStack.isEmpty()) {
-        std::cout << "Popped: " << myStack.pop() << std::endl;
+        cout << "Popped: " << myStack.pop() << endl;
     }
 
     return 0;

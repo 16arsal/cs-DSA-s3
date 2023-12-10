@@ -30,7 +30,7 @@ public:
     int pop() 
     {
         if (isEmpty()) {
-            std::cout << "Stack is empty. Cannot pop." << std::endl;
+            cout << "Stack is empty. Cannot pop." << endl;
              return -1; // Return a sentinel value for an empty stack
         }
         int value = top->data;
@@ -42,7 +42,7 @@ public:
 
     int peek() {
         if (isEmpty()) {
-            std::cout << "Stack is empty. Cannot peek." << std::endl;
+            cout << "Stack is empty. Cannot peek." << endl;
             return -1; // Return a sentinel value for an empty stack
         }
         return top->data;

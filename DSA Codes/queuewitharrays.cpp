@@ -14,7 +14,7 @@ public:
     // Enqueue (push) an element
         bool enqueue(int value) {
         if (isFull()) {
-            std::cout << "Queue is full. Cannot enqueue " << value << std::endl;
+            cout << "Queue is full. Cannot enqueue " << value << endl;
             return false;
         }
         if (isEmpty()) {
@@ -29,7 +29,7 @@ public:
     // Dequeue (pop) an element
     int dequeue() {
         if (isEmpty()) {
-            std::cout << "Queue is empty. Cannot dequeue." << std::endl;
+            cout << "Queue is empty. Cannot dequeue." << endl;
             return -1; // Return a sentinel value for an empty queue
         }
         int value = arr[front];
@@ -44,7 +44,7 @@ public:
     // Peek at the front element
     int peek() {
         if (isEmpty()) {
-            std::cout << "Queue is empty. Cannot peek." << std::endl;
+            cout << "Queue is empty. Cannot peek." << endl;
             return -1; // Return a sentinel value for an empty queue
         }
         return arr[front];
@@ -69,22 +69,22 @@ int main() {
     myQueue.enqueue(30);
 
     // Dequeue elements and display them
-    std::cout << "Dequeued elements: ";
-    std::cout << myQueue.dequeue() << " ";
-    std::cout << myQueue.dequeue() << " ";
-    std::cout << myQueue.dequeue() << " ";
-    std::cout << std::endl;
+    cout << "Dequeued elements: ";
+    cout << myQueue.dequeue() << " ";
+    cout << myQueue.dequeue() << " ";
+    cout << myQueue.dequeue() << " ";
+    cout << endl;
 
     // Peek at the front element
     int frontElement = myQueue.peek();
-    std::cout << "Front element: " << frontElement << std::endl;
+    cout << "Front element: " << frontElement << endl;
 
     // Check if the queue is empty
     bool empty = myQueue.isEmpty();
     if (empty) {
-        std::cout << "Queue is empty." << std::endl;
+        cout << "Queue is empty." << endl;
     } else {
-        std::cout << "Queue is not empty." << std::endl;
+        cout << "Queue is not empty." << endl;
     }
 
     return 0;
