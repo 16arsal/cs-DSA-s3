@@ -1,8 +1,9 @@
 #include <iostream>
+using namespace std;
 
 template <class Object>
-
-class TreeNode {
+class TreeNode 
+{
 public:
   Object *object;
   TreeNode *left;
@@ -68,13 +69,14 @@ void insert(TreeNode<Object> *&root, Object *info)
 }
 
 template <class Object>
-void inorderTraversal(TreeNode<Object> *root) {
+void inorderTraversal(TreeNode<Object> *root)
+{
   if (root != nullptr) {
     // Traverse the left subtree.
     inorderTraversal(root->getLeft());
 
     // Visit the current node.
-    std::cout << *(root->getInfo()) << " ";
+    cout << *(root->getInfo()) << " ";
 
     // Traverse the right subtree.
     inorderTraversal(root->getRight());
@@ -88,9 +90,9 @@ int main() {
     insert(root, &x[i]);
   }
 
-  std::cout << "In-order traversal: ";
+  cout << "In-order traversal: ";
   inorderTraversal(root);
-  std::cout << std::endl;
+  cout << endl;
 
   return 0;
 }
