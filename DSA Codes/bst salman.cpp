@@ -26,12 +26,14 @@ public:
 };
 
 template <class Object>
-void insert(TreeNode<Object> *&root, Object *info) {
+void insert(TreeNode<Object> *&root, Object *info) 
+{
   // Create a new node to store the data.
   TreeNode<Object> *node = new TreeNode<Object>(info);
 
   // If the tree is empty, make the new node the root node.
-  if (root == nullptr) {
+  if (root == nullptr) 
+  {
     root = node;
     return;
   }
@@ -39,15 +41,20 @@ void insert(TreeNode<Object> *&root, Object *info) {
   // Find the parent of the new node.
   TreeNode<Object> *current = root;
   TreeNode<Object> *parent = nullptr;
-  while (current != nullptr) {
+  while (current != nullptr) 
+  {
     parent = current;
-    if (*info == *(current->getInfo())) {
+    if (*info == *(current->getInfo())) 
+    {
       // The element already exists in the tree, so we don't insert it.
       delete node;
       return;
-    } else if (*info < *(current->getInfo())) {
+    } 
+    else if (*info < *(current->getInfo()))
+     {
       current = current->getLeft();
-    } else {
+     } else 
+    {
       current = current->getRight();
     }
   }
