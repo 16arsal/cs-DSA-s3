@@ -1,6 +1,7 @@
 #include <iostream>
 
 template <class Object>
+
 class TreeNode {
 public:
   Object *object;
