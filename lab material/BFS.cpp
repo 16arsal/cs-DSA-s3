@@ -38,7 +38,7 @@ void DFS(struct Graph* graph, int vertex) {
 
 // Create a node
 struct node* createNode(int v) {
-  struct node* newNode = malloc(sizeof(struct node));
+  struct node* newNode = (struct node*)malloc(sizeof(struct node));
   newNode->vertex = v;
   newNode->next = NULL;
   return newNode;
@@ -46,12 +46,12 @@ struct node* createNode(int v) {
 
 // Create graph
 struct Graph* createGraph(int vertices) {
-  struct Graph* graph = malloc(sizeof(struct Graph));
+  struct Graph* graph = (struct Graph*)malloc(sizeof(struct Graph));
   graph->numVertices = vertices;
 
-  graph->adjLists = malloc(vertices * sizeof(struct node*));
+  graph->adjLists = (struct node**)malloc(vertices * sizeof(struct node*));
 
-  graph->visited = malloc(vertices * sizeof(int));
+  graph->visited = (int*)malloc(vertices * sizeof(int));
 
   int i;
   for (i = 0; i < vertices; i++) {
