@@ -22,7 +22,8 @@ struct Graph{
 };
 
 //create a new node 
-AdjListNode* newAdjListNode(int data){ 
+AdjListNode* newAdjListNode(int data)
+{ 
 	AdjListNode *nptr=new AdjListNode; 
 	nptr->data=data; 
 	nptr->next=NULL; 
