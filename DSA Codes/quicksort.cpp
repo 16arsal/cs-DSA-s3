@@ -1,10 +1,9 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
 // Function to partition the array
-int partition(vector<int>& arr, int low, int high) {
+int partition(int arr[], int low, int high) {
     int pivot = arr[high];
     int i = low - 1;
 
@@ -20,7 +19,7 @@ int partition(vector<int>& arr, int low, int high) {
 }
 
 // Function to perform Quicksort
-void quicksort(vector<int>& arr, int low, int high) {
+void quicksort(int arr[], int low, int high) {
     if (low < high) {
         int pivotIndex = partition(arr, low, high);
 
@@ -30,24 +29,24 @@ void quicksort(vector<int>& arr, int low, int high) {
 }
 
 // Function to print the array
-void printArray(const vector<int>& arr) {
-    for (int num : arr) {
-        cout << num << " ";
+void printArray(const int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
     }
     cout << endl;
 }
 
 int main() {
-    vector<int> arr = {9, 5, 7, 2, 1, 8, 6, 3, 4};
-    int n = arr.size();
+    int arr[] = {9, 5, 7, 2, 1, 8, 6, 3, 4};
+    int n = sizeof(arr) / sizeof(arr[0]);
 
     cout << "Original array: ";
-    printArray(arr);
+    printArray(arr, n);
 
     quicksort(arr, 0, n - 1);
 
     cout << "Sorted array: ";
-    printArray(arr);
+    printArray(arr, n);
 
     return 0;
 }

@@ -1,91 +1,81 @@
 #include <iostream>
+
 using namespace std;
 
-// Function to merge two subarrays into a single sorted array
-void merge(int array[], int const left, int const mid, int const right)
+// Function to merge two sorted subarrays into a single sorted array
+void merge(int array[], int left, int mid, int right)
 {
-    // Calculate the sizes of the two subarrays to be merged
-    int const subArrayOne = mid - left + 1;
-    int const subArrayTwo = right - mid;
+    int leftSize = mid - left + 1;
+    int rightSize = right - mid;
 
-    // Create temporary arrays for the subarrays
-    auto *leftArray = new int[subArrayOne],
-         *rightArray = new int[subArrayTwo];
+    int* leftArray = new int[leftSize];
+    int* rightArray = new int[rightSize];
 
-    // Copy data to temporary arrays
-    for (int i = 0; i < subArrayOne; i++)
+    for (int i = 0; i < leftSize; i++)
     {
         leftArray[i] = array[left + i];
     }
-    for (int j = 0; j < subArrayTwo; j++)
+
+    for (int j = 0; j < rightSize; j++)
     {
         rightArray[j] = array[mid + 1 + j];
     }
 
-    // Variables to track the current index of each subarray and the merged array
-    auto indexOfSubArrayOne = 0, indexOfSubArrayTwo = 0;
-    int indexOfMergedArray = left;
+    int i = 0, j = 0, k = left;
 
-    // Merge the temporary arrays back into the original array
-    while (indexOfSubArrayOne < subArrayOne && indexOfSubArrayTwo < subArrayTwo)
+    while (i < leftSize && j < rightSize)
     {
-        if (leftArray[indexOfSubArrayOne] <= rightArray[indexOfSubArrayTwo])
+        if (leftArray[i] <= rightArray[j])
         {
-            array[indexOfMergedArray] = leftArray[indexOfSubArrayOne];
-            indexOfSubArrayOne++;
+            array[k] = leftArray[i];
+            i++;
         }
         else
         {
-            array[indexOfMergedArray] = rightArray[indexOfSubArrayTwo];
-            indexOfSubArrayTwo++;
+            array[k] = rightArray[j];
+            j++;
         }
-        indexOfMergedArray++;
+        k++;
     }
 
-    // Copy the remaining elements of the left subarray, if there are any
-    while (indexOfSubArrayOne < subArrayOne)
+    while (i < leftSize)
     {
-        array[indexOfMergedArray] = leftArray[indexOfSubArrayOne];
-        indexOfSubArrayOne++;
-        indexOfMergedArray++;
+        array[k] = leftArray[i];
+        i++;
+        k++;
     }
 
-    // Copy the remaining elements of the right subarray, if there are any
-    while (indexOfSubArrayTwo < subArrayTwo)
+    while (j < rightSize)
     {
-        array[indexOfMergedArray] = rightArray[indexOfSubArrayTwo];
-        indexOfSubArrayTwo++;
-        indexOfMergedArray++;
+        array[k] = rightArray[j];
+        j++;
+        k++;
     }
 
-    // Deallocate the memory used for the temporary arrays
     delete[] leftArray;
     delete[] rightArray;
 }
 
 // Function to implement the merge sort algorithm
-void mergeSort(int array[], int const begin, int const end)
+void mergeSort(int array[], int left, int right)
 {
-    if (begin >= end)
+    if (left >= right)
     {
         return; // Base case: the array is already sorted if it has 0 or 1 elements
     }
 
-    // Calculate the middle point of the array
-    int mid = begin + (end - begin) / 2;
-    // Recursively sort the two halves of the array
-    mergeSort(array, begin, mid);
-    mergeSort(array, mid + 1, end);
-    // Merge the sorted halves
-    merge(array, begin, mid, end);
+    int mid = left + (right - left) / 2;
+    mergeSort(array, left, mid);
+    mergeSort(array, mid + 1, right);
+    merge(array, left, mid, right);
 }
 
 // Function to print an array
-void printArray(int A[], int size)
+void printArray(const int array[], int size)
 {
     for (int i = 0; i < size; i++)
     {
-        cout << A[i] << " ";
+        cout << array[i] << " ";
     }
     cout << endl;
 }
@@ -93,20 +83,16 @@ void printArray(int A[], int size)
 // Main function
 int main()
 {
-    // Initialize the array to be sorted
     int arr[] = {12, 11, 13, 5, 6, 7};
-    int arr_size = sizeof(arr) / sizeof(arr[0]);
+    int size = sizeof(arr) / sizeof(arr[0]);
 
-    // Print the original array
-    cout << "Given array is \n";
-    printArray(arr, arr_size);
+    cout << "Given array is: ";
+    printArray(arr, size);
 
-    // Sort the array using merge sort
-    mergeSort(arr, 0, arr_size - 1);
+    mergeSort(arr, 0, size - 1);
 
-    // Print the sorted array
-    cout << "\nSorted Array is \n";
-    printArray(arr, arr_size);
+    cout << "Sorted array is: ";
+    printArray(arr, size);
 
     return 0;
 }
