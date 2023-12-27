@@ -53,10 +53,13 @@ Graph* createGraph(int V)
 void addEdge(Graph *graph, int src, int dest){
 	
 //Add an edge from src to dest. A new node added to the adjacency list of src //node added at beginning 
+
 AdjListNode *nptr = newAdjListNode(dest); 
 nptr->next = graph->arr[src].head;
 graph->arr[src].head = nptr; 	
+
 //connect from dest to src (since undirected) 
+
 nptr=newAdjListNode(src); 
 nptr->next=graph->arr[dest].head;
 graph->arr[dest].head=nptr; 
