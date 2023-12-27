@@ -21,38 +21,6 @@ struct Graph{
 	AdjList *arr; 
 };
 
-AdjListNode *newAdjListNode(int); 
-Graph *createGraph(int);
-void addEdge(Graph*,int,int);
-void printGraph(Graph*);
-
-int main(){
-	//create a new graph 
-	int totalVertices=4; 
-	
-	Graph *graph; 
-	graph=createGraph(totalVertices); 
-	
-	//connect edges 
-	addEdge(graph,0,1); 
-	addEdge(graph,0,2); 
-	addEdge(graph,0,3); 
-	addEdge(graph,1,3); 
-	addEdge(graph,2,3); 
-	
-	/* 
-	addEdge(graph,0,1); 
-	addEdge(graph,0,4); 
-	addEdge(graph,1,2); 
-	addEdge(graph,1,3); 
-	addEdge(graph,1,4); 
-	addEdge(graph,2,3); 
-	addEdge(graph,3,4); 
-	*/ 
-	//print the adjacency list representation of graph 
-	printGraph(graph);
-}
-
 //create a new node 
 AdjListNode* newAdjListNode(int data){ 
 	AdjListNode *nptr=new AdjListNode; 
@@ -106,3 +74,31 @@ void printGraph(Graph* graph){
 		cout<<endl; 
 	} 
 }
+
+int main(){
+	//create a new graph 
+	int totalVertices=4; 
+	
+	Graph *graph; 
+	graph=createGraph(totalVertices); 
+	
+	//connect edges 
+	addEdge(graph,0,1); 
+	addEdge(graph,0,2); 
+	addEdge(graph,0,3); 
+	addEdge(graph,1,3); 
+	addEdge(graph,2,3); 
+	
+	/* 
+	addEdge(graph,0,1); 
+	addEdge(graph,0,4); 
+	addEdge(graph,1,2); 
+	addEdge(graph,1,3); 
+	addEdge(graph,1,4); 
+	addEdge(graph,2,3); 
+	addEdge(graph,3,4); 
+	*/ 
+	//print the adjacency list representation of graph 
+	printGraph(graph);
+}
+
