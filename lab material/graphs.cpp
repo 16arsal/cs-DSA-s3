@@ -63,6 +63,7 @@ graph->arr[source].head = nptr;
 nptr=newAdjListNode(source); 
 nptr->next=graph->arr[dest].head;
 graph->arr[dest].head=nptr; 
+
 }
 
 //function to print the graph 

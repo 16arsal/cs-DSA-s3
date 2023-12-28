@@ -8,7 +8,7 @@ void printGraph(int graph[][V]) {
     cout << "Adjacency Matrix Representation:" << endl;
     for (int i = 0; i < V; ++i) {
         for (int j = 0; j < V; ++j) {
-            cout << graph[i][j] << " ";
+            cout << graph[i][j] << "  ";
         }
         cout << endl;
     }
