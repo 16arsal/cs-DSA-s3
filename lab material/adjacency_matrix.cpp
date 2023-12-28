@@ -1,21 +1,23 @@
 #include <iostream>
 
+using namespace std;
+
 const int V = 4; // Number of vertices in the graph
 
 void printGraph(int graph[][V]) {
-    std::cout << "Adjacency Matrix Representation:" << std::endl;
+    cout << "Adjacency Matrix Representation:" << endl;
     for (int i = 0; i < V; ++i) {
         for (int j = 0; j < V; ++j) {
-            std::cout << graph[i][j] << " ";
+            cout << graph[i][j] << " ";
         }
-        std::cout << std::endl;
+        cout << endl;
     }
 }
 
 int main() {
- int graph[V][V] = {0};
+    int graph[V][V] = {0};
 
- // Adding edges between vertices
+    // Adding edges between vertices
     graph[0][1] = graph[1][0] = 1;
     graph[0][3] = graph[3][0] = 1;
     graph[1][2] = graph[2][1] = 1;
@@ -33,4 +35,3 @@ int main() {
 3 | 1  0  1  0
 
 */
-
